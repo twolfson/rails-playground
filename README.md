@@ -22,8 +22,13 @@ cd rails-playground
 # Install our local files
 bundle install
 
-# TODO: Define server startup
+# Start our server
+bin/rails server
+# => Booting Puma
+# => Rails 5.1.2 application starting in development on http://localhost:3000
 ```
+
+Our application is now running and accessible at <http://localhost:3000/>
 
 ## Documentation
 TODO: Add documentation

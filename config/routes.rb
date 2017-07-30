@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+  # Declare our root page
+  root('welcome#index')
 
-  root 'welcome#index'
+  # Define pages that exist
+  get('welcome/index')
+
+  # Define a CRUD resource
+  resources(:articles)
 end

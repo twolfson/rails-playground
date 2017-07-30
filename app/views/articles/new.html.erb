@@ -1,6 +1,18 @@
 <h1>New Article</h1>
 <%= form_for(:article, :url => articles_path) do |form| %>
   <%# TODO: See if we can make something like a FormControl component/function %>
+  <% if @article.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@article.errors.count, 'error') %> prohibited this article from being saved:
+      </h2>
+      <ul>
+        <% @article.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end # full_messages.each %>
+      </ul>
+    </div>
+  <% end # errors.any? %>
   <p>
     <%= form.label(:title) %>
     <br/>

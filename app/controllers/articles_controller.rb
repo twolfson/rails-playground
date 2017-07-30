@@ -1,14 +1,17 @@
 class ArticlesController < ApplicationController
   def new
+    @article = Article.new()
   end
 
   def create
     # Create and save our article
     @article = Article.new(article_params())
-    @article.save()
-
-    # Redirect to our article's page to avoid double submissions
-    redirect_to(@article)
+    if @article.save()
+      # Redirect to our article's page to avoid double submissions
+      redirect_to(@article)
+    else
+      render('new')
+    end
   end
 
   def show

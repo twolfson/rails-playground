@@ -1,18 +1,12 @@
 <h1>Listing articles</h1>
 
-<table>
-  <tr>
-    <th>Id</th>
-    <th>Title</th>
-    <th>Text</th>
-  </tr>
-
-  <% @articles.each do |article| %>
-    <tr>
-      <td><%= article.id %></td>
-      <td><%= article.title %></td>
-      <td><%= article.text %></td>
-      <td><%= link_to('Show', article_path(article)) %></td>
-    </tr>
-  <% end %>
-</table>
+<% @articles.each do |article| %>
+  <div>
+    <h2 style="margin: 0"><%= article.title %></h2>
+    <p style="margin: 0">
+      <%= article.text %>
+      <br/>
+      <%= link_to('Read more', article_path(article)) %>
+    </p>
+  </div>
+<% end %>

@@ -2,7 +2,14 @@
 Playground environment for Ruby on Rails
 
 ## Getting started
-TODO: Add getting started
+Before getting our repo set up, please verify the following dependencies are installed:
+
+- Ruby >= 2.2.1
+    - We recommend using [chruby][] and [ruby-install][] to avoid interfering with your OS' Ruby
+    - Alternatively, a Docker container would alleviate these issues as well
+
+[chruby]: https://github.com/postmodern/chruby
+[ruby-install]: https://github.com/postmodern/ruby-install
 
 ## Documentation
 TODO: Add documentation

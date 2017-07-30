@@ -1,1 +1,18 @@
 <h1>New Article</h1>
+<%= form_for(:article, :url => articles_path) do |form| %>
+  <%# TODO: See if we can make something like a FormControl component/function %>
+  <p>
+    <%= form.label(:title) %>
+    <br/>
+    <%= form.text_field(:title) %>
+  </p>
+  <p>
+    <%# TODO: Rename from `text` to `content` %>
+    <%= form.label(:text) %>
+    <br/>
+    <%= form.text_area(:text) %>
+  </p>
+  <p>
+    <%= form.submit() %>
+  </p>
+<% end # form_for %>

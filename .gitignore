@@ -1,1 +1,10 @@
+# Ignore binstubs
+bin/nokogiri
+bin/rackup
+bin/rails
+bin/rake
+bin/sprockets
+bin/thor
+
+# Ignore vendor files
 vendor/

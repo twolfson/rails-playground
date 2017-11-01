@@ -3,7 +3,7 @@ Playground environment for Ruby on Rails
 
 This is to provide a proof of concept and exploration space for taking my existing thoughts and aligning them with Rails' opinions. We've used the following documentation along the way:
 
-- <http://guides.rubyonrails.org/v4.2/>
+- <http://guides.rubyonrails.org/v4.2/>, up to "5.11 Updating Articles" exclusively
 
 ## Getting started
 Before getting our repo set up, please verify the following dependencies are installed:

@@ -15,6 +15,7 @@
       <td><%= link_to("Show", article_path(article)) %></td>
       <td><%= link_to("Edit", edit_article_path(article)) %></td>
       <td>
+        <%# DEV: I really dislike this "link to delete" convention as it's lying to a11y users and not very PWA =/ %>
         <%= link_to("Destroy", article_path(article),
           :method => :delete, :data => {:confirm => "Are you sure?"}) %>
       </td>

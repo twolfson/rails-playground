@@ -51,6 +51,15 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def destroy
+    # Resolve and destroy our article
+    @article = Article.find(params[:id])
+    @article.destroy!()
+
+    # Redirect to our listing
+    return redirect_to(articles_path)
+  end
+
   private
     def article_params
       return params.require(:article).permit(:title, :text)

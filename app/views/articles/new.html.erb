@@ -2,7 +2,7 @@
 <%# DEV: Rails will wrap all new fields/parameters in bracket notation (e.g. name="article[title]") for names %>
 <%#   It will also use snake_case for `for/id` matchings (e.g. `for/id="article_title"`) %>
 <%# DEV: `f` stands for FormBuilder but it's verbose to reuse across all these lines %>
-<%# TODO: How does Rails know this is a `create` article vs `edit` article? %>
+<%# DEV: Rails knows this is a new article due to `articles_path` not receiving an argument %>
 <%= form_for(:article, :url => articles_path) do |f| %>
   <%# If there were errors during save, render them %>
   <% if @article.errors.any? %>

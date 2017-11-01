@@ -30,8 +30,8 @@ bundle install
 
 # Start our server
 bin/rails server
-# => Booting Puma
-# => Rails 5.1.2 application starting in development on http://localhost:3000
+# => Booting WEBrick
+# => Rails 4.2.10 application starting in development on http://localhost:3000
 ```
 
 Our application is now running and accessible at <http://localhost:3000/>

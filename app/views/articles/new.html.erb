@@ -1,1 +1,18 @@
 <h1>New Article</h1>
+<%# DEV: Rails will wrap all new fields/parameters in bracket notation (e.g. name="article[title]") for names %>
+<%#   It will also use snake_case for `for/id` matchings (e.g. `for/id="article_title"`) %>
+<%= form_for(:article) do |f| %>
+  <p>
+    <%= f.label(:title) %><br/>
+    <%= f.text_field(:title) %>
+  </p>
+
+  <p>
+    <%= f.label(:text) %><br/>
+    <%= f.text_field(:text) %>
+  </p>
+
+  <p>
+    <%= f.submit() %>
+  </p>
+<% end # form_for %>

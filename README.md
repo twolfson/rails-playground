@@ -39,6 +39,26 @@ Our application is now running and accessible at <http://localhost:3000/>
 ## Documentation
 TODO: Add documentation
 
+### Initial setup
+We initially set up this repo via the following lines of code:
+
+```bash
+# Switch to Ruby 2
+chruby 2
+
+# Set up a Gemfile with Rails
+gemrat rails
+# Manually adjust Rails version in Gemfile and add parens
+
+# Configure Bundler config manually
+
+# Run bundler install
+bundle install
+
+# Run Rails setup
+bundle exec rails new blog
+```
+
 ## Donating
 Support this project and [others by twolfson][twolfson-projects] via [donations][twolfson-support-me].
 

@@ -37,6 +37,50 @@ bin/rails server
 Our application is now running and accessible at <http://localhost:3000/>
 
 ## Documentation
+### Quick notes
+Rails has a good chunk of magic baked into it. Here's some notes about what's magical/not:
+
+- MVC model is used for separation of responsibilities
+
+#### Routing
+- Routes defined in `config/routes.rb`
+    - Mostly behave as one expects except for `resources` which provides CRUD methods for its matching controller. Here are examples for `articles`
+        - These were resolved via `rake routes`
+        - `GET  /articles -> ArticleController#index`
+        - `POST /articles -> ArticleController#create`
+            - Route to receive `#new` submissions
+        - `GET  /articles/new -> ArticleController#new`
+            - Page to create a new resource (recommended to re-render page on failure)
+        - `GET  /articles/:id/edit -> ArticleController#edit`
+            - Page to edit an existing resource (recommended to re-render page on failure)
+        - `GET  /articles/:id -> ArticleController#show`
+        - `PATCH /articles/:id -> ArticleController#update`
+            - Route to receive `#edit` submissions
+        - `PUT /articles/:id -> ArticleController#update`
+        - `DELETE  /articles/:id -> ArticleController#destroy`
+        - These also might support `.json`/`.csv`/etc formats but I have yet to explore it
+- We have magic omni-present methods for resolving resource URLs
+    - These all have `*_url` equivalents which include hostname and protocol (i.e. `*_path = /path/to/resource`, `*_url` = `http://localhost:3000/path/to/resource`)
+    - `articles_path` - Returns path for `index` method of `ArticleController`
+    - `new_article_path` - Returns path for `new` method of `ArticleController`
+    - `edit_article_path(article)` - Returns path for given `article` via `edit` method of `ArticleController`
+    - `article_path(article)` - Returns path for given article via `show` method of `ArticleController`
+
+#### Models
+- Models are generally accessible from the rest of the application without requiring them
+
+#### Controllers
+- Controller methods will automatically call their `view` equivalent when no other `render()` call has been specified
+    - For example `ArticleController#new()` will render `views/articles/new.html.erb`
+- Rails has some foolproof parameter handling (i.e. requires specifying `require` and `permit` for any keys/values we plan on reading from) :100:
+
+#### Views
+- Partials typically use an `_` prefix but their inclusion call (i.e. `render()` doesn't need to pass in said prefix
+- `form_for()` does some magic introspection of the resource it's building a form for and determines the appropriate controller and way to create/update said resource
+- `form_for()`  generates nested objects and unlikely-to-conflict ids for its form elements
+    - See example here: https://github.com/twolfson/rails-playground/blob/a6ff3b3172d0b0e6b3331d4e55ee7722c15a7524/app/views/articles/_form.html.erb#L1-L3
+- Rails isn't bulletproof as it will still need objects to look over errors for (can't iterate over `nil`)
+
 ### Initial setup
 We initially set up this repo via the following lines of code:
 

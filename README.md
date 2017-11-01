@@ -37,8 +37,6 @@ bin/rails server
 Our application is now running and accessible at <http://localhost:3000/>
 
 ## Documentation
-TODO: Add documentation
-
 ### Initial setup
 We initially set up this repo via the following lines of code:
 

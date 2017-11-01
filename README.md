@@ -55,8 +55,8 @@ gemrat rails
 # Run bundler install
 bundle install
 
-# Run Rails setup
-bundle exec rails new blog
+# Run Rails setup in current directory (approving overwrites for all files)
+bundle exec rails new .
 ```
 
 ## Donating

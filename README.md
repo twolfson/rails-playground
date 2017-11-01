@@ -1,6 +1,10 @@
 # rails-playground
 Playground environment for Ruby on Rails
 
+This is to provide a proof of concept and exploration space for taking my existing thoughts and aligning them with Rails' opinions. We've used the following documentation along the way:
+
+- <http://guides.rubyonrails.org/v4.2/>
+
 ## Getting started
 Before getting our repo set up, please verify the following dependencies are installed:
 
@@ -8,9 +12,11 @@ Before getting our repo set up, please verify the following dependencies are ins
     - We recommend using [chruby][] and [ruby-install][] to avoid interfering with your OS' Ruby
     - Alternatively, a Docker container would alleviate these issues as well
 - Bundler (`gem install bundler`)
+- [SQLite3][]
 
 [chruby]: https://github.com/postmodern/chruby
 [ruby-install]: https://github.com/postmodern/ruby-install
+[SQLite3]: https://www.sqlite.org/
 
 To get our repo set up locally, run the following:
 

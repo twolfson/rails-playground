@@ -17,14 +17,20 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
 
     # If our article saves with no validation errors, redirect to its new page
-    # TODO: What's the difference between `save()` and `save!()`?
-    # TODO: What's the magic method for the article's URL and what does the magic in `redirect_to` look like?
+    # DEV: `save()` returns true/false for validation whereas `save!()` will raise an error
+    #   https://apidock.com/rails/v2.3.8/ActiveRecord/Base/save
+    #   https://apidock.com/rails/v2.3.8/ActiveRecord/Base/save!
+    # DEV: Under the hood `redirect_to` will use `url_for` on `@article`
+    #  `url_for` eventually returns `*_url(*)` (e.g. `article_url(article)`)
+    #   https://apidock.com/rails/ActionController/Base/redirect_to
+    #   https://apidock.com/rails/ActionController/Base/url_for
+    #   https://apidock.com/rails/ActionController/PolymorphicRoutes/polymorphic_url
     if @article.save()
       return redirect_to(@article)
     # Otherwise, render our page with its errors
-    # TODO: Can we use a symbol for new?
+    # DEV: We could use a string for `render` but providing an action feels clearer
     else
-      render("new")
+      render(:action => :new)
     end
   end
 

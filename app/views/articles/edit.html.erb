@@ -1,9 +1,6 @@
-<h1>New Article</h1>
-<%# DEV: Rails will wrap all new fields/parameters in bracket notation (e.g. name="article[title]") for names %>
-<%#   It will also use snake_case for `for/id` matchings (e.g. `for/id="article_title"`) %>
-<%# DEV: `f` stands for FormBuilder but it's verbose to reuse across all these lines %>
-<%# DEV: Rails knows this is a new article due to not using `articles_path`/receiving an argument %>
-<%= form_for(:article, :url => articles_path) do |f| %>
+<%# DEV: This is heavily based on `new.html.erb` %>
+<h1>Editing Article</h1>
+<%= form_for(:article, :url => article_path(@article), :method => :patch) do |f| %>
   <%# If there were errors during save, render them %>
   <% if @article.errors.any? %>
     <div id="error_explanation">

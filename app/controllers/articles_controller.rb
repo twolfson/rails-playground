@@ -12,6 +12,10 @@ class ArticlesController < ApplicationController
     @article = Article.new()
   end
 
+  def edit
+    @article = Article.find(params[:id])
+  end
+
   def create
     # Create our article
     @article = Article.new(article_params)
@@ -31,6 +35,19 @@ class ArticlesController < ApplicationController
     # DEV: We could use a string for `render` but providing an action feels clearer
     else
       render(:action => :new)
+    end
+  end
+
+  def update
+    # Resolve our article
+    @article = Article.find(params[:id])
+
+    # If our article updates/saves with no validation errors, redirect to its page
+    if @article.update(article_params)
+      return redirect_to(@article)
+    # Otherwise, render our page with its errors
+    else
+      render(:action => :edit)
     end
   end
 

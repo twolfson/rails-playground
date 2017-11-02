@@ -12,6 +12,7 @@ Topics to explore:
 - [ ] Watch support for tests
     - See this is possible via `spring` or `guard`
 - [ ] Integrate `expected_status` into all `get`/`post`/etc calls
+- [ ] Setting up CSRF in tests (ignored by default for tests if I saw correctly)
 - [ ] Implement XHR call via Rails
 - [ ] Add browser tests and contract tests
 - [ ] Document `pry` usage (including `binding.pry()`)

@@ -13,6 +13,7 @@ Topics to explore:
     - See this is possible via `spring` or `guard`
 - [ ] Integrate `expected_status` into all `get`/`post`/etc calls
 - [ ] Setting up CSRF in tests (ignored by default for tests if I saw correctly)
+- [ ] Preventing `:focus` in CI tests via end-of-tests catch
 - [ ] Implement XHR call via Rails
 - [ ] Add browser tests and contract tests
 - [ ] Document `pry` usage (including `binding.pry()`)

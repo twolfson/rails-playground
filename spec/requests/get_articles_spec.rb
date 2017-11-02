@@ -11,7 +11,7 @@ RSpec.describe("GET /articles", :type => :request) do
 
   describe("with articles") do
     it("lists article content") do
-      get(root_path)
+      get(articles_path)
       expect(response).to(have_http_status(200))
       expect(response.body).to(include("foo"))
     end

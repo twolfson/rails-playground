@@ -9,6 +9,8 @@ Topics to explore:
 
 - [x] Implement CRUD via Rails
 - [ ] Add server tests
+- [ ] Watch support via tests
+    - See this is possible via `spring` or `guard`
 - [ ] Implement XHR call via Rails
 - [ ] Add browser tests and contract tests
 

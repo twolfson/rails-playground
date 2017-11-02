@@ -11,3 +11,13 @@ This directory was setup by running the following:
 - Install `rspec-rails` in `Gemfile`
 - `bundle install`
 - Intialize our directory via `rails generate rspec:install`
+- Add existing placeholder specs
+  ```bash
+  rails generate rspec:model Article
+  rails generate rspec:controller Articles
+  rails generate rspec:controller Welcome
+  ```
+- Add helper `bin/rspec` for leaner test calls (no long paths in `stdout`)
+  ```bash
+  bundle binstubs rspec-core
+  ```

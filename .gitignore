@@ -13,4 +13,5 @@
 /tmp
 
 # Vendor files
+/node_modules
 /vendor

@@ -5,5 +5,6 @@ set -euo pipefail
 # Run our linter and tests
 if test "$SKIP_LINT" != "TRUE"; then
   # Linter pending...
+  true
 fi
 bin/rspec

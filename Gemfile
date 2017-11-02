@@ -39,6 +39,9 @@ group(:development, :test) do
 
   # Run tests via RSpec
   gem("rspec-rails", "~> 3.6")
+
+  # Allow for debugging via Pry
+  gem("pry-rails", "~> 0.3.6")
 end
 
 # Define development only dependencies
@@ -49,4 +52,3 @@ group(:development) do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem("spring")
 end
-

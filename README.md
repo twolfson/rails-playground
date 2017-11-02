@@ -13,6 +13,7 @@ Topics to explore:
     - See this is possible via `spring` or `guard`
 - [ ] Implement XHR call via Rails
 - [ ] Add browser tests and contract tests
+- [ ] Document `pry` usage (including `binding.pry()`)
 
 ## Getting started
 Before getting our repo set up, please verify the following dependencies are installed:

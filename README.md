@@ -9,8 +9,9 @@ Topics to explore:
 
 - [x] Implement CRUD via Rails
 - [ ] Add server tests
-- [ ] Watch support via tests
+- [ ] Watch support for tests
     - See this is possible via `spring` or `guard`
+- [ ] Integrate `expected_status` into all `get`/`post`/etc calls
 - [ ] Implement XHR call via Rails
 - [ ] Add browser tests and contract tests
 - [ ] Document `pry` usage (including `binding.pry()`)

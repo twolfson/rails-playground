@@ -4,7 +4,7 @@ rvm:
   - "2.2"
 
 script:
-  - bin/rspec
+  - ./test.sh
 
 notifications:
   email:

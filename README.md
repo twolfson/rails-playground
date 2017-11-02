@@ -1,4 +1,4 @@
-# rails-playground
+# rails-playground [![Build status](https://travis-ci.org/twolfson/rails-playground.svg?branch=master)](https://travis-ci.org/twolfson/rails-playground)
 Playground environment for Ruby on Rails
 
 This is to provide a proof of concept and exploration space for taking my existing thoughts and aligning them with Rails' opinions. We've used the following documentation along the way:

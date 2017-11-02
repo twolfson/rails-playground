@@ -34,13 +34,7 @@ gem("sdoc", "~> 0.4.0", :group => :doc)
 
 # Define development/testing dependencies
 group(:development, :test) do
-  # Call "byebug" anywhere in the code to stop execution and get a debugger console
-  gem("byebug")
-
-  # Run tests via RSpec
   gem("rspec-rails", "~> 3.6")
-
-  # Allow for debugging via Pry
   gem("pry-rails", "~> 0.3.6")
 end
 

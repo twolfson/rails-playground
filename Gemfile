@@ -36,6 +36,7 @@ gem("sdoc", "~> 0.4.0", :group => :doc)
 group(:development, :test) do
   gem("rspec-rails", "~> 3.6")
   gem("pry-rails", "~> 0.3.6")
+  gem("factory_girl_rails", "~> 4.9.0")
 end
 
 # Define development only dependencies

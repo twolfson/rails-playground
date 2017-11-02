@@ -4,6 +4,13 @@ This directory was set up to replace the built-in Rails tests (i.e. `ActiveSuppo
 https://github.com/twolfson/rails-playground/tree/1.0.0/test
 
 ## Documentation
+### Requests vs controllers
+We focus on `requests` based tests (i.e. model + controller + view working togther) vs `controllers` (i.e. controller only) as it reduces likelihood of brittle boundaries and removes the need for contract-based testing of said boundaries
+
+This is agreed upon by `rspec-rails` as well:
+
+<https://github.com/rspec/rspec-rails/tree/v3.7.1#controller-specs>
+
 ### Initial setup
 This directory was setup by running the following:
 

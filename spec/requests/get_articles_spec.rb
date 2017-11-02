@@ -20,7 +20,9 @@ RSpec.describe("GET /articles", :type => :request) do
       expect(response).to(have_http_status(200))
 
       # Verify our content
-      expect(response.body).to(include("foo"))
+      expect(response.body).to(include("First title"))
+      expect(response.body).to(include("First text"))
+      expect(response.body).to(include("Second title"))
     end
   end
 end

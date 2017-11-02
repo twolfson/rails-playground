@@ -16,6 +16,7 @@ Topics to explore:
 - [ ] Implement XHR call via Rails
 - [ ] Add browser tests and contract tests
 - [ ] Document `pry` usage (including `binding.pry()`)
+- [ ] Document `:focus` usage
 
 ## Getting started
 Before getting our repo set up, please verify the following dependencies are installed:

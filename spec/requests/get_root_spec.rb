@@ -3,7 +3,7 @@ require("rails_helper")
 RSpec.describe("GET /", :type => :request) do
   # non_existent: N/A, non_owner: N/A, logged_out: N/A
   before() do
-    get(root_path)
+    get("/")
   end
 
   it("has no errors") do

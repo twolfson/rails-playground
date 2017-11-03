@@ -4,7 +4,7 @@ RSpec.describe("GET /articles", :type => :request) do
   # non_existent: yes, non_owner: N/A, logged_out: N/A
   describe("with no articles") do
     it("has no errors") do
-      get(articles_path)
+      get("/articles")
       expect(response).to have_http_status(200)
     end
   end
@@ -16,7 +16,7 @@ RSpec.describe("GET /articles", :type => :request) do
       create(:article2)
 
       # Make our request
-      get(articles_path)
+      get("/articles")
       expect(response).to(have_http_status(200))
 
       # Verify our content

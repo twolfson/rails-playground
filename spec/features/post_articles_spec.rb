@@ -14,11 +14,11 @@ RSpec.describe("POST /articles", :type => :feature) do
         fill_in("Title", :with => "Test title")
         fill_in("Text", :with => "Test text")
       end
-      click_button("Create Article")
+      click_button(:visible => "input[type=submit]")
     end
 
-    xit("redirects to articles listing") do
-      expect(current_url).to(equal("/articles"))
+    it("redirects to article's page") do
+      expect(page.current_path).to(match(/\/articles\/\d+/))
     end
 
     it("creates a new article in our database") do

@@ -9,6 +9,10 @@ Topics to explore:
 
 - [x] Implement CRUD via Rails
 - [ ] Add server tests
+    - [x] GET (no form data)
+    - [ ] POST/PUT/PATCH/DELETE (form data)
+    - [ ] 404 item not found
+    - [ ] 404 route not found
 - [ ] Watch support for tests
     - See this is possible via `spring` or `guard`
 - [ ] Integrate `expected_status` into all `get`/`post`/etc calls

@@ -1,6 +1,9 @@
 # Define our source for gems
 source("https://rubygems.org")
 
+# Restrict our Ruby version
+ruby("~> 2.2")
+
 # Define our common dependencies
 gem("rails", "~> 4.2.10")
 # Use sqlite3 as the database for Active Record
@@ -46,4 +49,9 @@ group(:development) do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem("spring")
+end
+
+# Define testing only dependencies
+group(:test) do
+  gem("capybara", "~> 2.15.4")
 end

@@ -1,7 +1,7 @@
 require("rails_helper")
 
 RSpec.describe("GET /", :type => :request) do
-  # logged_out: N/A, non_existent: N/A, not_found: N/A
+  # non_existent: N/A, non_owner: N/A, logged_out: N/A
   before() do
     get(root_path)
   end

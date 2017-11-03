@@ -1,7 +1,7 @@
 require("rails_helper")
 
 RSpec.describe("GET /articles", :type => :request) do
-  # logged_out: N/A, non_existent: N/A, not_found: yes
+  # non_existent: yes, non_owner: N/A, logged_out: N/A
   describe("with no articles") do
     it("has no errors") do
       get(articles_path)

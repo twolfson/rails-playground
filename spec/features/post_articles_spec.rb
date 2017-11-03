@@ -17,11 +17,15 @@ RSpec.describe("POST /articles", :type => :feature) do
       click_button("Create Article")
     end
 
-    skip("redirects to articles listing") do
+    xit("redirects to articles listing") do
       expect(current_url).to(equal("/articles"))
     end
 
-    skip("creates a new article in our database") do
+    it("creates a new article in our database") do
+      articles = Article.all().to_ary()
+      expect(articles.size).to(eq(1))
+      expect(articles[0].title).to(eq("Test title"))
+      expect(articles[0].text).to(eq("Test text"))
     end
   end
 

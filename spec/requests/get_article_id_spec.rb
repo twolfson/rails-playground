@@ -1,5 +1,7 @@
+# Load in our dependencies
 require("rails_helper")
 
+# Start our tests
 RSpec.describe("GET /article/:id", :type => :request) do
   # non_existent: yes, non_owner: N/A, logged_out: N/A
   describe("for a non-existent article") do

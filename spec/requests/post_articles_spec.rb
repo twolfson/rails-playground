@@ -1,5 +1,7 @@
+# Load in our dependencies
 require("rails_helper")
 
+# Start our tests
 RSpec.describe("POST /articles", :type => :request) do
   # non_existent: N/A, non_owner: N/A, logged_out: N/A
   describe("with valid data") do

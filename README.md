@@ -20,6 +20,7 @@ Topics to explore:
 - [ ] Preventing `:focus` in CI tests via end-of-tests catch
 - [ ] Implement XHR call via Rails
 - [ ] Add browser tests and contract tests
+- [ ] Add linting
 - [ ] Document `pry` usage (including `binding.pry()`)
 - [ ] Document `:focus` usage
 - [ ] Document `gemrat` usage

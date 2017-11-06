@@ -53,5 +53,6 @@ end
 
 # Define testing only dependencies
 group(:test) do
-  gem("capybara", "~> 2.15.4")
+  gem("capybara", "~> 2.13.0")
+  gem("capybara-webkit", "~> 1.14.0")
 end

@@ -1,3 +1,8 @@
 <% @page_title = "Welcome!" %>
 <h1>Hello, Rails!</h1>
 <%= link_to("My Blog", :controller => :articles) %>
+
+<script>
+  document.title = 'foo';
+  document.querySelector('h1').textContent = 'bar';
+</script>

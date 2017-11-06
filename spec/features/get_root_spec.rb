@@ -2,7 +2,7 @@
 require("rails_helper")
 
 # Start our tests
-RSpec.describe("GET /", :type => :feature) do
+RSpec.describe("GET /", :type => :feature, :js => true) do
   # non_existent: N/A, non_owner: N/A, logged_out: N/A
   before() do
     visit("/")

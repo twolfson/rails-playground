@@ -22,7 +22,7 @@ RSpec.describe("GET /articles", :type => :feature) do
       expect(page.status_code).to(eq(200))
 
       # Verify our content
-      # TODO: Add page title assertion
+      expect(page.title).to(eq("Articles"))
       expect(page).to(have_content("First title"))
       expect(page).to(have_content("First text"))
       expect(page).to(have_content("Second title"))

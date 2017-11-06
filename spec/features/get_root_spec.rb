@@ -13,7 +13,7 @@ RSpec.describe("GET /", :type => :feature) do
   end
 
   it("links to articles") do
-    # TODO: Add page title assertion
+    expect(page.title).to(eq("Welcome!"))
     expect(find_link(:href => articles_path)).not_to(eq(nil))
   end
 end

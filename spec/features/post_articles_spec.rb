@@ -51,8 +51,10 @@ RSpec.describe("POST /articles", :type => :feature) do
 
       # Verify errors and form values
       expect(find("#error_explanation")).to(have_content("Title is too short"))
-      expect(find_field(:name => "article[title]").value).to(eq("foo"))
-      expect(find_field(:name => "article[text]").value).to(eq("Test text"))
+      within("form[action=\"/articles\"][method=post]") do
+        expect(find_field(:name => "article[title]").value).to(eq("foo"))
+        expect(find_field(:name => "article[text]").value).to(eq("Test text"))
+      end
     end
   end
 end

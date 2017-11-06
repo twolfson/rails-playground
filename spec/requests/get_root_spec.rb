@@ -14,6 +14,7 @@ RSpec.describe("GET /", :type => :request) do
 
   it("links to articles") do
     # TODO: Replace with CSS selector, likely via Capybara
+    # TODO: Add page title assertion
     expect(response.body).to(include("href=\"#{articles_path}\""))
   end
 end

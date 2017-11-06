@@ -15,13 +15,16 @@ RSpec.describe("GET /article/:id", :type => :request) do
   describe("for an existent article") do
     it("renders article's content") do
       # Set up our fixtures
+      # DEV: We require page value assertion so our future checks are valid
       article = create(:article)
+      expect(article.id).to(eq(1))
 
       # Make our request
       get("/articles/#{article.id}")
       expect(response).to(have_http_status(200))
 
       # Verify our content
+      # TODO: Add page title assertion
       expect(response.body).to(include("First title"))
       expect(response.body).to(include("First text"))
     end

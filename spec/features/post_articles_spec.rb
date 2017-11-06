@@ -19,6 +19,7 @@ RSpec.describe("POST /articles", :type => :feature) do
     end
 
     it("redirects to article's page") do
+      expect(page.title).to(eq("Article 1"))
       expect(page.current_path).to(match(/^\/articles\/\d+$/))
     end
 

@@ -11,11 +11,10 @@ RSpec.describe("POST /articles", :type => :feature) do
 
       # Fill out our form and submit it
       within("form[action=\"/articles\"][method=post]") do
-        # TODO: Replace checking text for field with `name`
-        fill_in("Title", :with => "Test title")
-        fill_in("Text", :with => "Test text")
+        fill_in(:name => "article[title]", :with => "Test title")
+        fill_in(:name => "article[text]", :with => "Test text")
       end
-      click_button(:visible => "input[type=submit]")
+      click_button(:value => "Create Article")
     end
 
     it("redirects to article's page") do
@@ -37,9 +36,8 @@ RSpec.describe("POST /articles", :type => :feature) do
 
       # Fill out our form and submit it
       within("form[action=\"/articles\"][method=post]") do
-        # TODO: Replace checking text for field with `name`
-        fill_in("Title", :with => "foo")
-        fill_in("Text", :with => "Test text")
+        fill_in(:name => "article[title]", :with => "foo")
+        fill_in(:name => "article[text]", :with => "Test text")
       end
       click_button(:visible => "input[type=submit]")
     end

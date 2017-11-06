@@ -24,6 +24,8 @@ Topics to explore:
 - [ ] Document `pry` usage (including `binding.pry()`)
 - [ ] Document `:focus` usage
 - [ ] Document `gemrat` usage
+- [ ] Document Qt install docs for `capybara-webkit`
+    - https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit
 
 ## Getting started
 Before getting our repo set up, please verify the following dependencies are installed:

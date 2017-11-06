@@ -1,6 +1,4 @@
-<% content_for(:title) do %>
-  <title>Article <%= @article.id %></title>
-<% end %>
+<% @page_title = "Article #{@article.id}" %>
 <p>
   <strong>Title:</strong>
   <%= @article.title %>

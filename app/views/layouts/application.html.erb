@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <% title_content = capture(:title) %>
-<!--   <% raise "Missing content for title" if title_content.blank? %>
-  <%= title_content %>
- -->  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <% raise "Missing title content" if @page_title.blank? %>
+  <title><%= @page_title %></title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>

@@ -44,7 +44,7 @@ RSpec.describe("POST /articles", :type => :feature) do
     end
 
     it("re-renders the same page with errors") do
-      expect(page.title).to(eq(:foo))
+      expect(page.title).to(eq("New article"))
       expect(page.current_path).to(match(/^\/articles$/))
       # TODO: Verify same values are in our form elements
     end

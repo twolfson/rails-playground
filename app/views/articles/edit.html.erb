@@ -1,3 +1,6 @@
+<% content_for(:title) do %>
+  <title>Article <%= @article.id %> - Edit</title>
+<% end %>
 <h1>Editing Article</h1>
 
 <%= render("form") %>

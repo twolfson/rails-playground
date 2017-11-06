@@ -44,9 +44,7 @@ RSpec.describe("POST /articles", :type => :feature) do
     end
 
     it("re-renders the same page with errors") do
-      # TODO: Is it possible for Rails to submit to the same page?
-      #   I feel like this is REST targeted which is impractical for HTML forms
-      #   i.e. People can't submit and later refresh their page
+      expect(page.title).to(eq(:foo))
       expect(page.current_path).to(match(/^\/articles$/))
       # TODO: Verify same values are in our form elements
     end

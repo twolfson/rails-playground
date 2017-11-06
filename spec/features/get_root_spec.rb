@@ -2,19 +2,18 @@
 require("rails_helper")
 
 # Start our tests
-RSpec.describe("GET /", :type => :request) do
+RSpec.describe("GET /", :type => :feature) do
   # non_existent: N/A, non_owner: N/A, logged_out: N/A
   before() do
-    get("/")
+    visit("/")
   end
 
   it("has no errors") do
-    expect(response).to(have_http_status(200))
+    expect(page.status_code).to(eq(200))
   end
 
   it("links to articles") do
-    # TODO: Replace with CSS selector, likely via Capybara
     # TODO: Add page title assertion
-    expect(response.body).to(include("href=\"#{articles_path}\""))
+    expect(find_link(:href => articles_path)).not_to(eq(nil))
   end
 end

@@ -2,12 +2,12 @@
 require("rails_helper")
 
 # Start our tests
-RSpec.describe("GET /articles", :type => :request) do
+RSpec.describe("GET /articles", :type => :feature) do
   # non_existent: yes, non_owner: N/A, logged_out: N/A
   describe("with no articles") do
     it("has no errors") do
-      get("/articles")
-      expect(response).to have_http_status(200)
+      visit("/articles")
+      expect(page.status_code).to(eq(200))
     end
   end
 
@@ -18,14 +18,14 @@ RSpec.describe("GET /articles", :type => :request) do
       create(:article2)
 
       # Make our request
-      get("/articles")
-      expect(response).to(have_http_status(200))
+      visit("/articles")
+      expect(page.status_code).to(eq(200))
 
       # Verify our content
       # TODO: Add page title assertion
-      expect(response.body).to(include("First title"))
-      expect(response.body).to(include("First text"))
-      expect(response.body).to(include("Second title"))
+      expect(page).to(have_content("First title"))
+      expect(page).to(have_content("First text"))
+      expect(page).to(have_content("Second title"))
     end
   end
 end

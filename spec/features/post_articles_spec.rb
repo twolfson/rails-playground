@@ -45,9 +45,14 @@ RSpec.describe("POST /articles", :type => :feature) do
     end
 
     it("re-renders the same page with errors") do
+      # Verify location and template
       expect(page.title).to(eq("New article"))
       expect(page.current_path).to(match(/^\/articles$/))
-      # TODO: Verify same values are in our form elements
+
+      # Verify errors and form values
+      expect(find("#error_explanation")).to(have_content("Title is too short"))
+      expect(find_field(:name => "article[title]").value).to(eq("foo"))
+      expect(find_field(:name => "article[text]").value).to(eq("Test text"))
     end
   end
 end

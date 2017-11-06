@@ -11,6 +11,8 @@ RSpec.describe("POST /articles", :type => :feature) do
 
       # Fill out our form and submit it
       # TODO: Define consolidated method for filling out forms (outside of this test file; a general helper method)
+      #   For example: Pass in a Hash, fill out form, find submit buttons, assert 1, and click it
+      #   We can also go further by asserting we will change the value of each of our form elements
       within("form[action=\"/articles\"][method=post]") do
         fill_in(:name => "article[title]", :with => "Test title")
         fill_in(:name => "article[text]", :with => "Test text")

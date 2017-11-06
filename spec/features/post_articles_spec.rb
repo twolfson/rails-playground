@@ -8,6 +8,7 @@ RSpec.describe("POST /articles", :type => :feature) do
     before do
       # Load our form-based page
       visit("/articles/new")
+      expect(page.status_code).to(eq(200))
 
       # Fill out our form and submit it
       # TODO: Define consolidated method for filling out forms (outside of this test file; a general helper method)
@@ -23,6 +24,7 @@ RSpec.describe("POST /articles", :type => :feature) do
     it("redirects to article's page") do
       expect(page.title).to(eq("Article 1"))
       expect(page.current_path).to(match(/^\/articles\/\d+$/))
+      expect(page.status_code).to(eq(200))
     end
 
     it("creates a new article in our database") do
@@ -37,6 +39,7 @@ RSpec.describe("POST /articles", :type => :feature) do
     before do
       # Load our form-based page
       visit("/articles/new")
+      expect(page.status_code).to(eq(200))
 
       # Fill out our form and submit it
       within("form[action=\"/articles\"][method=post]") do
@@ -50,6 +53,7 @@ RSpec.describe("POST /articles", :type => :feature) do
       # Verify location and template
       expect(page.title).to(eq("New article"))
       expect(page.current_path).to(match(/^\/articles$/))
+      expect(page.status_code).to(eq(400))
 
       # Verify errors and form values
       expect(find("#error_explanation")).to(have_content("Title is too short"))

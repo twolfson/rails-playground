@@ -34,7 +34,7 @@ class ArticlesController < ApplicationController
     # Otherwise, render our page with its errors
     # DEV: We could use a string for `render` but providing an action feels clearer
     else
-      render(:action => :new)
+      render(:action => :new, :status => :bad_request)
     end
   end
 
@@ -47,7 +47,7 @@ class ArticlesController < ApplicationController
       return redirect_to(@article)
     # Otherwise, render our page with its errors
     else
-      render(:action => :edit)
+      render(:action => :edit, :status => :bad_request)
     end
   end
 

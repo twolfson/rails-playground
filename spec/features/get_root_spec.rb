@@ -25,7 +25,7 @@ RSpec.describe("GET /", :type => :feature, :js => true) do
       expect(page.status_code).to(eq(200))
     end
 
-    fit("changes title on click") do
+    it("changes title on click") do
       expect(find("#message").text).to(eq("Hello, Rails!"))
       click_button(:id => "change_message")
       expect(find("#message").text).to(eq("Hallo, Rails!"))

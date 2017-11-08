@@ -25,11 +25,6 @@ Topics to explore:
 - [x] Add browser tests and contract tests
     - We've settled on not needing contract tests between the browser and server due to having `capybara-webkit`
 - [ ] Add linting
-- [ ] Document `pry` usage (including `binding.pry()`)
-- [ ] Document `:focus` usage
-- [ ] Document `gemrat` usage
-- [ ] Document Qt install docs for `capybara-webkit`
-    - https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit
 
 ## Getting started
 Before getting our repo set up, please verify the following dependencies are installed:
@@ -39,10 +34,14 @@ Before getting our repo set up, please verify the following dependencies are ins
     - Alternatively, a Docker container would alleviate these issues as well
 - Bundler (`gem install bundler`)
 - [SQLite3][]
+- [Qt][] for [capybara-webkit][]
+    - See <https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit>
 
 [chruby]: https://github.com/postmodern/chruby
 [ruby-install]: https://github.com/postmodern/ruby-install
 [SQLite3]: https://www.sqlite.org/
+[Qt]: https://www.qt.io/
+[capybara-webkit]: https://github.com/thoughtbot/capybara-webkit
 
 To get our repo set up locally, run the following:
 
@@ -106,6 +105,51 @@ Rails has a good chunk of magic baked into it. Here's some notes about what's ma
 - `form_for()`  generates nested objects and unlikely-to-conflict ids for its form elements
     - See example here: https://github.com/twolfson/rails-playground/blob/a6ff3b3172d0b0e6b3331d4e55ee7722c15a7524/app/views/articles/_form.html.erb#L1-L3
 - Rails isn't bulletproof as it will still need objects to look over errors for (can't iterate over `nil`)
+
+### Debugging
+We've set up `pry` for easy debugging. This can be used via:
+
+```bash
+bin/rails console
+> ls # Available methods
+> show-source variable_name # Inspect source code of a given variable
+```
+
+It can also be integrated into running processes via:
+
+```ruby
+require("pry")
+binding.pry()
+```
+
+### Testing
+We've set up tests via the following:
+
+```bash
+./test.sh
+
+# Or run individual test files via `bin/rspec`
+bin/rspec
+```
+
+#### Exclusive contexts
+To run exactly 1 context, add a `:focus => true` to it. Here are some examples:
+
+```ruby
+describe("GET /", :focus => true) do
+# or
+it("has no errors", :focus => true) do
+```
+
+### Installing dependencies
+For conveniently installing dependencies, we recommend using [gemrat][]
+
+```bash
+# Installs via `bundler` and to `Gemfile`
+gemrat module_name
+```
+
+[gemrat]: https://github.com/DruRly/gemrat
 
 ### Initial setup
 We initially set up this repo via the following lines of code:

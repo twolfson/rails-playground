@@ -18,8 +18,12 @@ Topics to explore:
 - [ ] Integrate `expected_status` into all `get`/`post`/etc calls
 - [ ] Setting up CSRF in tests (ignored by default for tests if I saw correctly)
 - [ ] Preventing `:focus` in CI tests via end-of-tests catch
-- [ ] Implement XHR call via Rails
-- [ ] Add browser tests and contract tests
+- [n] Implement XHR call via Rails
+    - One-off XHR calls are typically unused for HTML forms in Rails, this is because JS is unobtrusive (aka progressive web app)
+        - <http://guides.rubyonrails.org/v4.2/working_with_javascript_in_rails.html>
+    - We could build an XHR call setup but that's not going to teach us anything new (outside of testing via `requests`)
+- [x] Add browser tests and contract tests
+    - We've settled on not needing contract tests between the browser and server due to having `capybara-webkit`
 - [ ] Add linting
 - [ ] Document `pry` usage (including `binding.pry()`)
 - [ ] Document `:focus` usage

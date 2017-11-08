@@ -13,8 +13,8 @@
     //   We'd like to avoid testing full suites like Bootstrap via `feature` tests
 
     // Resolve our elements
-    let changeMessageEl = document.getElementById('change_message');
-    let messageEl = document.getElementById('message');
+    var changeMessageEl = document.getElementById('change_message');
+    var messageEl = document.getElementById('message');
     if (!changeMessageEl) { throw new Error('No #change_message element found'); }
     if (!messageEl) { throw new Error('No #message element found'); }
 

@@ -1,8 +1,26 @@
 <% @page_title = "Welcome!" %>
-<h1>Hello, Rails!</h1>
+<h1 id="message">Hello, Rails!</h1>
 <%= link_to("My Blog", :controller => :articles) %>
 
+<p>
+  <button id="change_message">Change message</button>
+</p>
+
 <script>
-  document.title = 'foo';
-  document.querySelector('h1').textContent = 'bar';
+  (function () {
+    // Define a proof of concept JS binding for our JS tests
+    //   This simulates integrating practical utilities which affect HTML forms
+    //   We'd like to avoid testing full suites like Bootstrap via `feature` tests
+
+    // Resolve our elements
+    let changeMessageEl = document.getElementById('change_message');
+    let messageEl = document.getElementById('message');
+    if (!changeMessageEl) { throw new Error('No #change_message element found'); }
+    if (!messageEl) { throw new Error('No #message element found'); }
+
+    // Set up our binding
+    changeMessageEl.addEventListener('click', function handleClick (evt) {
+      messageEl.textContent = 'Hallo, Rails!';
+    });
+  }());
 </script>
